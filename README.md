@@ -1,2 +1,2 @@
 # cpp_42
-Send to git
+Send to my pc
