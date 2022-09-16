@@ -1,2 +1,2 @@
 # cpp_42
-Send to my pc
+Send to all
