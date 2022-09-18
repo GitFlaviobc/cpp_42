@@ -1,44 +1,30 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* phonebook.hpp                                         :+:        :+:    :+: :+:    :+    */
+/* Weapon.hpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:35 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:35 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 15:49:18 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 16:52:57 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-#include <iomanip>
+#include <string.h>
 #include <iostream>
-#include <sstream>
-#include <string>
 
-#include "contact.hpp"
-
-class PhoneBook {
+class Weapon {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	FTaddContact(std::string firstName,
-				std::string lastName,
-				std::string nickName,
-				std::string phoneNumber,
-				std::string darkestSecret);
-		int		FTvalidContact(int index);
-		int		FTgetTotalContacts(void);
-		void	FTprintAllContacts(void);
-		void	FTprintOneContact(int index);
+		Weapon(std::string type);
+		~Weapon(void);
+		const std::string	&getType(void) const;
+		void	setType(std::string type);
 	private:
-		Contact	_contacts[8];
-		int		_total;
-		int		_index;
-		void	_FTprintFormattedField(std::string str);
+		std::string _type;
 };
 
 #endif

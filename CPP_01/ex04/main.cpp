@@ -1,25 +1,17 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* main.cpp                                              :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 17:59:01 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
-
-#include <iostream>
-#include <sstream>
-#include <string>
-
-#include "phonebook.hpp"
-
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+int main(void) {
+	
+	return (0);
+}

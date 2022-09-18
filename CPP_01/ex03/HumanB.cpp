@@ -1,25 +1,30 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* HumanB.cpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 16:49:29 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 17:33:36 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+HumanB::HumanB(std::string name) : _name(name) {
+	return ;
+}
 
-#include "phonebook.hpp"
+HumanB::~HumanB(void) {
+	return ;
+}
 
-#define CLEAR "\x1B[2J\x1B[H"
+void HumanB::setWeapon(Weapon &weapon) {
+	this->_weapon = &weapon;
+}
 
-#endif
+void HumanB::attack(void) const {
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+}

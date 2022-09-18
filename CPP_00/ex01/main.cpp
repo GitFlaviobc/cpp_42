@@ -1,32 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fbonini- <fbonini-@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 21:54:14 by fbonini-          #+#    #+#             */
-/*   Updated: 2022/07/10 20:28:43 by fbonini-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* **************************************************************************************** */
+/*                                                                                          */
+/*                                                        :::::::::: :::::::::   :::::::    */
+/* main.cpp                                              :+:        :+:    :+: :+:    :+    */
+/*                                                      +:+        +:+    +:+ +:+           */
+/* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
+/*                                                   +#+        +#+    +#+ +#+              */
+/* Created: 2022/09/17 19:55:58 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/17 20:01:07 by Flavio BC       ###        #########   ########          */
+/* License: MIT                                                                             */
+/*                                                                                          */
+/* **************************************************************************************** */
 
 #include "main.hpp"
 
-void	FTsearchInPhoneBook(PhoneBook myPhoneBook)
-{
+void	FTsearchInPhoneBook(PhoneBook myPhoneBook) {
 	int index;
 
 	std::cout << CLEAR;
-	if (myPhoneBook.FTgetTotalContacts() == 0)
-	{
+	if (myPhoneBook.FTgetTotalContacts() == 0) {
 		std::cout << "PhoneBook is empty, please add a contact first." << std::endl;
 		return ;
 	}
 	myPhoneBook.FTprintAllContacts();
 	std::cout << "Please enter the contact index: ";
 	std::cin >> index;
-	if (myPhoneBook.FTvalidContact(index - 1) == 0)
-	{
+	if (myPhoneBook.FTvalidContact(index - 1) == 0) {
 		std::cout << "Error!" << std::endl;
 		std::cout << "Invalid index!" << std::endl;
 		return ;
@@ -34,11 +32,9 @@ void	FTsearchInPhoneBook(PhoneBook myPhoneBook)
 	myPhoneBook.FTprintOneContact(index - 1);
 }
 
-int	FTcheckValidField(std::string field)
-{
+int	FTcheckValidField(std::string field) {
 	for (std::string::iterator it = field.begin(); it != field.end(); ++it)
-	if (!std::isalnum(*it))
-	{
+	if (!std::isalnum(*it)) {
 		std::cout << "Error!" << std::endl;
 		std::cout << "Field in the phonebook can´t be empty!" << std::endl;
 		return (0);
@@ -46,8 +42,7 @@ int	FTcheckValidField(std::string field)
 	return (1);
 }
 
-void	FTaddToPhoneBook(PhoneBook &myPhoneBook)
-{
+void	FTaddToPhoneBook(PhoneBook &myPhoneBook) {
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
@@ -81,8 +76,7 @@ void	FTaddToPhoneBook(PhoneBook &myPhoneBook)
 	std::cout << "Contact " << firstName << " added to PhoneBook." << std::endl;
 }
 
-void	FTintroMessage(void)
-{
+void	FTintroMessage(void) {
 	std::cout << std::endl;
 	std::cout << "Welcome to a really bad PhoneBook!" << std::endl;
 	std::cout << "To use the PhoneBook is really simple:" << std::endl;
@@ -91,14 +85,12 @@ void	FTintroMessage(void)
 	std::cout <<  "Type EXIT, to exit this amazing PhoneBook"  << std::endl;
 }
 
-int	main(void)
-{
+int	main(void) {
 	PhoneBook myPhoneBook;
 	std::string	option;
 
 	std::cout << CLEAR;
-	while (true)
-	{
+	while (true) {
 		FTintroMessage();
 		std::cin >> option;
 		std::cout << std::endl;
@@ -108,12 +100,10 @@ int	main(void)
 			FTsearchInPhoneBook(myPhoneBook);
 		else if (option == "EXIT")
 			break ;
-		else
-		{
+		else {
 			std::cout << "Error!" << std::endl;
 			std::cout << "Invalid Input!" << std::endl;
 		}
-		
 	}
 	return (0);
 }

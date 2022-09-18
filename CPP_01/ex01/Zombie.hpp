@@ -1,44 +1,32 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* phonebook.hpp                                         :+:        :+:    :+: :+:    :+    */
+/* Zombie.hpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:35 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:35 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 10:54:29 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 11:37:18 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-#include <iomanip>
-#include <iostream>
-#include <sstream>
 #include <string>
+#include <iostream>
 
-#include "contact.hpp"
-
-class PhoneBook {
+class Zombie {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	FTaddContact(std::string firstName,
-				std::string lastName,
-				std::string nickName,
-				std::string phoneNumber,
-				std::string darkestSecret);
-		int		FTvalidContact(int index);
-		int		FTgetTotalContacts(void);
-		void	FTprintAllContacts(void);
-		void	FTprintOneContact(int index);
+		Zombie(void);
+		~Zombie(void);
+		void	setZombieName(std::string name);
+		void	announce( void );
 	private:
-		Contact	_contacts[8];
-		int		_total;
-		int		_index;
-		void	_FTprintFormattedField(std::string str);
+		std::string	_name;
 };
+
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

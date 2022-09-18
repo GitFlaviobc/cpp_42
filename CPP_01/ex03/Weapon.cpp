@@ -1,25 +1,30 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* Weapon.cpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 16:51:15 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 16:53:27 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Weapon.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+Weapon::Weapon(std::string type) : _type(type) {
+	return ;
+}
 
-#include "phonebook.hpp"
+Weapon::~Weapon(void) {
+	return ;
+}
 
-#define CLEAR "\x1B[2J\x1B[H"
+const std::string &Weapon::getType(void) const {
+  return (this->_type);
+}
 
-#endif
+void Weapon::setType(std::string type) {
+	this->_type = type;
+}

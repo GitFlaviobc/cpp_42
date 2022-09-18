@@ -1,25 +1,25 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* main.cpp                                              :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 11:42:17 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+int	main(void) {
+	Zombie *Horde;
 
-#include "phonebook.hpp"
-
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+	Horde = zombieHorde(10, "Marvin");
+	for (int i = 0; i < 10; i++) {
+		Horde[i].announce();
+	}
+	delete[] Horde;
+	return (0);
+}

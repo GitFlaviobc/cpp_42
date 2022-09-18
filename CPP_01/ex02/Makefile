@@ -5,18 +5,20 @@
 #                                                       +:+        +:+    +:+ +:+            #
 #  By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+              #
 #                                                    +#+        +#+    +#+ +#+               #
-#  Created: 2022/09/17 20:02:17 by Flavio BC        #+#        #+#    #+# #+#    #+#         #
-#  Updated: 2022/09/17 20:02:18 by Flavio BC       ###        #########   ########           #
+#  Created: 2022/09/18 10:54:19 by Flavio BC        #+#        #+#    #+# #+#    #+#         #
+#  Updated: 2022/09/18 16:54:57 by Flavio BC       ###        #########   ########           #
 #  License: MIT                                                                              #
 #                                                                                            #
 # ****************************************************************************************** #
 
-NAME			= megaphone
+NAME			= brain
+
+HEADERS			=
 
 SRCS_DIR		= ./
 OBJ_DIR			= obj/
 
-SRCS			= megaphone.cpp
+SRCS			=	main.cpp
 OBJS			= $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
 CC				= c++
@@ -27,11 +29,11 @@ all:	$(NAME)
 
 $(NAME):	$(OBJ_DIR) $(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) -o $@
-
+			
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -41,10 +43,5 @@ fclean:	clean
 	$(RM) $(NAME)
 
 re:		fclean $(NAME)
-
-test:	$(NAME)
-	./megaphone "shhhhh... I think the students are asleep..."
-	./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-	./megaphone
 
 .PHONY:		all clean fclean re

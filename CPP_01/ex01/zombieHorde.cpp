@@ -1,25 +1,23 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* zombieHorde.cpp                                       :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 11:29:32 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 11:40:22 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+Zombie* zombieHorde( int N, std::string name ) {
+	Zombie* Horde = new Zombie[N];
 
-#include "phonebook.hpp"
-
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+	for (int i = 0; i < N; i++) {
+		Horde[i].setZombieName(name);
+	}
+	return (Horde);
+}

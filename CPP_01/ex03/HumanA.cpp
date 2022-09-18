@@ -1,25 +1,26 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* HumanA.cpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 15:46:17 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 17:50:24 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "HumanA.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {
+	return ;
+}
 
-#include "phonebook.hpp"
+HumanA::~HumanA(void) {
+	return ;
+}
 
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+void HumanA::attack(void) const {
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}

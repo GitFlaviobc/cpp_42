@@ -1,25 +1,26 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* main.cpp                                              :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 19:48:30 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+int main(void) {
+	Harl harl_test;
+	std::string Complains[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-#include "phonebook.hpp"
-
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+	for (int i = 0; i < 4; i++) {
+		std::cout << "-----------------------" <<std::endl;
+		std::cout << "Will call Complain: " << Complains[i] << std::endl;
+		harl_test.complain(Complains[i]);
+	}
+	return (0);
+}

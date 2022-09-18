@@ -1,44 +1,32 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* phonebook.hpp                                         :+:        :+:    :+: :+:    :+    */
+/* Harl.hpp                                              :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:35 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:35 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 18:57:30 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 18:57:31 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include <iomanip>
-#include <iostream>
-#include <sstream>
 #include <string>
+#include <iostream>
 
-#include "contact.hpp"
-
-class PhoneBook {
+class Harl {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	FTaddContact(std::string firstName,
-				std::string lastName,
-				std::string nickName,
-				std::string phoneNumber,
-				std::string darkestSecret);
-		int		FTvalidContact(int index);
-		int		FTgetTotalContacts(void);
-		void	FTprintAllContacts(void);
-		void	FTprintOneContact(int index);
+		Harl(void);
+		~Harl(void);
+		void complain( std::string level );
 	private:
-		Contact	_contacts[8];
-		int		_total;
-		int		_index;
-		void	_FTprintFormattedField(std::string str);
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
 };
 
 #endif

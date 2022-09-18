@@ -1,26 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fbonini- <fbonini-@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 21:54:01 by fbonini-          #+#    #+#             */
-/*   Updated: 2022/07/10 15:53:12 by fbonini-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* **************************************************************************************** */
+/*                                                                                          */
+/*                                                        :::::::::: :::::::::   :::::::    */
+/* phonebook.cpp                                         :+:        :+:    :+: :+:    :+    */
+/*                                                      +:+        +:+    +:+ +:+           */
+/* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
+/*                                                   +#+        +#+    +#+ +#+              */
+/* Created: 2022/09/17 19:56:24 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/17 19:57:36 by Flavio BC       ###        #########   ########          */
+/* License: MIT                                                                             */
+/*                                                                                          */
+/* **************************************************************************************** */
 
 #include "phonebook.hpp"
 
-PhoneBook::PhoneBook(void)
-{
+PhoneBook::PhoneBook(void) {
 	this->_total = 0;
 	this->_index = 0;
 	return ;
 }
 
-PhoneBook::~PhoneBook(void)
-{
+PhoneBook::~PhoneBook(void) {
 	return ;
 }
 
@@ -28,8 +27,7 @@ void	PhoneBook::FTaddContact(std::string firstName,
 				std::string lastName,
 				std::string nickName,
 				std::string phoneNumber,
-				std::string darkestSecret)
-{
+				std::string darkestSecret) {
 	this->_contacts[this->_index].FTsetFirstName(firstName);
 	this->_contacts[this->_index].FTsetLastName(lastName);
 	this->_contacts[this->_index].FTsetNickName(nickName);
@@ -42,20 +40,17 @@ void	PhoneBook::FTaddContact(std::string firstName,
 		this->_index %= 8;
 }
 
-int	PhoneBook::FTgetTotalContacts(void)
-{
+int	PhoneBook::FTgetTotalContacts(void) {
 	return (this->_total);
 }
 
-int	PhoneBook::FTvalidContact(int index)
-{
+int	PhoneBook::FTvalidContact(int index) {
 	if (index >= 0 && index < this->_total)
 		return (1);
 	return (0);
 }
 
-void PhoneBook::FTprintOneContact(int index)
-{
+void PhoneBook::FTprintOneContact(int index) {
 	std::cout << "First Name: " << this->_contacts[index].FTgetFirstName() << std::endl;
 	std::cout << "Last Name: " << this->_contacts[index].FTgetLastName() << std::endl;
 	std::cout << "Nickname: " << this->_contacts[index].FTgetNickName() << std::endl;
@@ -64,16 +59,14 @@ void PhoneBook::FTprintOneContact(int index)
 	std::cout << std::endl;
 }
 
-void PhoneBook::_FTprintFormattedField(std::string str)
-{
+void PhoneBook::_FTprintFormattedField(std::string str) {
 	if (str.length() > 9)
 		std::cout << std::setw(10) << str.substr(0, 9) + '.';
 	else
 		std::cout << std::setw(10) << str;
 }
 
-void PhoneBook::FTprintAllContacts(void)
-{
+void PhoneBook::FTprintAllContacts(void) {
 	std::cout << "| " << "   INDEX  " << " | ";
 	std::cout << "FIRST NAME" << " | ";
 	std::cout << " LAST NAME" << " | ";

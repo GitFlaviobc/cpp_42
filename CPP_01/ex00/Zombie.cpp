@@ -1,25 +1,28 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* main.hpp                                              :+:        :+:    :+: :+:    :+    */
+/* Zombie.cpp                                            :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/17 19:56:07 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:56:09 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/18 10:54:27 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/18 11:25:04 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
+Zombie::Zombie(std::string name) : _name(name) {
+	return ;
+}
 
-#include "phonebook.hpp"
+Zombie::~Zombie(void) {
+	std::cout << "Zombie: " << this->_name << " was destroyed!" << std::endl;
+	return ;
+}
 
-#define CLEAR "\x1B[2J\x1B[H"
-
-#endif
+void Zombie::announce( void ) {
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return ;
+}
