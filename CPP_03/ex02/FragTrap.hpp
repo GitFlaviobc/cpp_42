@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 13:13:16 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 13:15:46 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:52:59 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -27,5 +27,6 @@ class FragTrap : public ClapTrap {
 
 		void highFivesGuys(void);
 };
+
 
 #endif

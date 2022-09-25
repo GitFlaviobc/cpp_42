@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/17 19:54:53 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:54:55 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:40:21 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <ctype.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int	j;
 

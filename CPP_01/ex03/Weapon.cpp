@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 16:51:15 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 20:24:43 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:46:08 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,7 +14,7 @@
 #include "Weapon.hpp"
 
 Weapon::Weapon(std::string type) : _type(type) {
-	return ;
+	return;
 }
 
 Weapon::~Weapon(void) {

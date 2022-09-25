@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:25 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 11:19:03 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:42:27 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,6 +14,6 @@
 #include "Zombie.hpp"
 
 void randomChump( std::string name ) {
-	Zombie undead(name);
+	Zombie	undead(name);
 	undead.announce();
 }

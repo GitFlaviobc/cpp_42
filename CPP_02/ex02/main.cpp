@@ -6,14 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 17:42:33 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:49:55 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main(void) {
+int	main(void) {
 	{
 		Fixed a;
 		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );

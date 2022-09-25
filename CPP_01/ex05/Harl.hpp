@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 18:57:30 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 18:57:31 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:47:31 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -21,12 +21,12 @@ class Harl {
 	public:
 		Harl(void);
 		~Harl(void);
-		void complain( std::string level );
+		void	complain( std::string level );
 	private:
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 };
 
 #endif

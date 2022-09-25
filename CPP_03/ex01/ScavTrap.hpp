@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 09:10:32 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 13:16:06 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:52:11 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -28,5 +28,6 @@ class ScavTrap : public ClapTrap {
 		void	attack(const std::string &target);
 		void	guardGate(void) const;
 };
+
 
 #endif

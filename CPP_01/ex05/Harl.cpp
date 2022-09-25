@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 18:57:28 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 19:20:28 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:46:55 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,7 +14,7 @@
 #include "Harl.hpp"
 
 Harl::Harl(void) {
-	return ;
+	return;
 }
 
 Harl::~Harl(void) {

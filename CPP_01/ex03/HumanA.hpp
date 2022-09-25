@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 15:46:20 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 17:50:32 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:45:32 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -23,7 +23,7 @@ class HumanA {
 		void	attack(void) const;
 	private:
 		std::string	_name;
-		Weapon		&_weapon;
+		Weapon	&_weapon;
 };
 
 #endif

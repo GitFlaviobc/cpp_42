@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/23 19:23:18 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 09:02:51 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:50:28 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamage(0), _name("ClapTrap") {
 	std::cout << "ClapTrap Default Constructor called!\n";
-	return ;
+	return;
 }
 
 ClapTrap::ClapTrap (std::string const name) : _hitPoints(10), _energyPoints(10), _attackDamage(0), _name(name) {

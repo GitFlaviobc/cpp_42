@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 20:10:54 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/19 15:53:08 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:48:01 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -17,7 +17,7 @@ int const Fixed::_fractBit = 8;
 
 Fixed::Fixed(void) : _fixedValue(0) {
 	std::cout << "Default constructor called" << std::endl;
-	return ;
+	return;
 }
 
 Fixed::~Fixed(void) {

@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 15:46:14 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 16:49:05 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:45:54 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -24,7 +24,7 @@ class HumanB {
 		void	setWeapon(Weapon &weapon);
 	private:
 		std::string	_name;
-		Weapon		*_weapon;
+		Weapon	*_weapon;
 };
 
 #endif

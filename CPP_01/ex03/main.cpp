@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 16:59:36 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:45:58 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -15,7 +15,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-int main(void) {
+int	main(void) {
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);

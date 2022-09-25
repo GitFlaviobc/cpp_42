@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 09:10:30 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 12:39:23 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:53:18 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
 	this->setName("ScavTrap");
 	this->setClassname("ScavTrap");
 	std::cout << this->getClassname() << ": Default Constructor called!\n";
-	return ;
+	return;
 }
 
 ScavTrap::ScavTrap(std::string const name) : ClapTrap(name) {

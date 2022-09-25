@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 20:10:51 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 16:32:12 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:49:48 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -49,9 +49,9 @@ class Fixed {
 		static Fixed &max(Fixed &lhs, Fixed &rhs);
 		static Fixed const &max(Fixed const &lhs, Fixed const &rhs);
 
-		int		getRawBits( void ) const;
-		void	setRawBits(int const raw );
-		float	toFloat(void ) const;
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
 		int		toInt(void) const;
 	private:
 		int					_fixedValue;

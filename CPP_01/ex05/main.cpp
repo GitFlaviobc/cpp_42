@@ -6,14 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 19:48:30 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:47:37 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void) {
+int	main(void) {
 	Harl harl_test;
 	std::string Complains[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 

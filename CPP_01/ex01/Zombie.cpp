@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:27 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/18 11:43:32 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:43:45 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,7 +14,7 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(void) {
-	return ;
+	return;
 }
 
 Zombie::~Zombie(void) {

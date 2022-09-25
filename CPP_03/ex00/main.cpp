@@ -6,14 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 09:08:31 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:50:47 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main(void) {
+int	main(void) {
 	{
 		std::cout << "---------- Calling Tests ----------\n";
 		std::cout << "\t--------  --------\n";

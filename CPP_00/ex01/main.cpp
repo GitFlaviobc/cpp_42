@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/17 19:55:58 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 20:01:07 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:40:57 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,7 +14,7 @@
 #include "main.hpp"
 
 void	FTsearchInPhoneBook(PhoneBook myPhoneBook) {
-	int index;
+	int	index;
 
 	std::cout << CLEAR;
 	if (myPhoneBook.FTgetTotalContacts() == 0) {

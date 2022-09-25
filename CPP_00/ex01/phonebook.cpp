@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/17 19:56:24 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/17 19:57:36 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:41:44 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -16,7 +16,7 @@
 PhoneBook::PhoneBook(void) {
 	this->_total = 0;
 	this->_index = 0;
-	return ;
+	return;
 }
 
 PhoneBook::~PhoneBook(void) {

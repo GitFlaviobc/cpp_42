@@ -6,24 +6,24 @@
 #  By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+              #
 #                                                    +#+        +#+    +#+ +#+               #
 #  Created: 2022/09/18 10:54:19 by Flavio BC        #+#        #+#    #+# #+#    #+#         #
-#  Updated: 2022/09/19 13:50:07 by Flavio BC       ###        #########   ########           #
+#  Updated: 2022/09/25 12:46:04 by Flavio BC       ###        #########   ########           #
 #  License: MIT                                                                              #
 #                                                                                            #
 # ****************************************************************************************** #
 
-NAME			= humans
+NAME		= humans
 
-HEADERS			= HumanA.hpp HumanB.hpp Weapon.hpp
+HEADERS		= HumanA.hpp HumanB.hpp Weapon.hpp
 
-SRCS_DIR		= ./
-OBJ_DIR			= obj/
+SRCS_DIR	= ./
+OBJ_DIR		= obj/
 
-SRCS			=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-OBJS			= $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
+SRCS		=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+OBJS		= $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
-CC				= c++
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
+CC			= c++
+RM			= rm -rf
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
 
 all:	$(NAME)
 

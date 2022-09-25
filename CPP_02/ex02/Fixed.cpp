@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 20:10:54 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 08:19:24 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:49:21 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -16,7 +16,7 @@
 int const Fixed::_fractBit = 8;
 
 Fixed::Fixed(void) : _fixedValue(0) {
-	return ;
+	return;
 }
 
 Fixed::Fixed(int const value) : _fixedValue(value << Fixed::_fractBit) {

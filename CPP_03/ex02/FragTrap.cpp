@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 13:13:14 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 14:35:43 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:52:46 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -20,7 +20,7 @@ FragTrap::FragTrap(void) : ClapTrap() {
 	this->setName("FragTrap");
 	this->setClassname("FragTrap");
 	std::cout << this->getClassname() << ": Default Constructor called!\n";
-	return ;
+	return;
 }
 
 FragTrap::FragTrap(std::string const name) : ClapTrap(name) {

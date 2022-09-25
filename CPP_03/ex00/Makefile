@@ -6,24 +6,24 @@
 #  By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+              #
 #                                                    +#+        +#+    +#+ +#+               #
 #  Created: 2022/09/18 10:54:19 by Flavio BC        #+#        #+#    #+# #+#    #+#         #
-#  Updated: 2022/09/23 19:40:53 by Flavio BC       ###        #########   ########           #
+#  Updated: 2022/09/25 12:51:43 by Flavio BC       ###        #########   ########           #
 #  License: MIT                                                                              #
 #                                                                                            #
 # ****************************************************************************************** #
 
-NAME			= claptrap
+NAME		= claptrap
 
-HEADERS			= ClapTrap.hpp
+HEADERS		= ClapTrap.hpp
 
-SRCS_DIR		= ./
-OBJ_DIR			= obj/
+SRCS_DIR	= ./
+OBJ_DIR		= obj/
 
-SRCS			=	main.cpp ClapTrap.cpp
-OBJS			= $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
+SRCS		= main.cpp ClapTrap.cpp
+OBJS		= $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
-CC				= c++
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
+CC			= c++
+RM			= rm -rf
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
 
 all:	$(NAME)
 

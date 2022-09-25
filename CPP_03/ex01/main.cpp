@@ -6,14 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/24 12:38:17 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/25 12:51:29 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int main(void) {
+int	main(void) {
 	{
 		std::cout << "---------- Calling Tests ----------\n";
 		std::cout << "\t--------  --------\n";
