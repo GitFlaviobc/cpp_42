@@ -1,30 +1,31 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* Weapon.cpp                                            :+:        :+:    :+: :+:    :+    */
+/* FragTrap.hpp                                          :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/18 16:51:15 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 20:24:43 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/24 13:13:16 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/24 13:15:46 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-Weapon::Weapon(std::string type) : _type(type) {
-	return ;
-}
+#include <iostream>
+#include "ClapTrap.hpp"
 
-Weapon::~Weapon(void) {
-	return ;
-}
+class FragTrap : public ClapTrap {
+	public:
+		FragTrap(void);
+		FragTrap(std::string const name);
+		~FragTrap(void);
+		FragTrap(FragTrap const &src);
+		FragTrap &operator=(FragTrap const &src);
 
-const std::string &Weapon::getType(void) const {
-	return (this->_type);
-}
+		void highFivesGuys(void);
+};
 
-void Weapon::setType(std::string type) {
-	this->_type = type;
-}
+#endif

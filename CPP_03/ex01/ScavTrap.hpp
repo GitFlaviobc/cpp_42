@@ -1,30 +1,32 @@
 /* **************************************************************************************** */
 /*                                                                                          */
 /*                                                        :::::::::: :::::::::   :::::::    */
-/* Weapon.cpp                                            :+:        :+:    :+: :+:    :+    */
+/* ScavTrap.hpp                                          :+:        :+:    :+: :+:    :+    */
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/18 16:51:15 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 20:24:43 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/09/24 09:10:32 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/09/24 13:16:06 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-Weapon::Weapon(std::string type) : _type(type) {
-	return ;
-}
+#include <iostream>
+#include "ClapTrap.hpp"
 
-Weapon::~Weapon(void) {
-	return ;
-}
+class ScavTrap : public ClapTrap {
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string const name);
+		~ScavTrap(void);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap &operator=(ScavTrap const &src);
 
-const std::string &Weapon::getType(void) const {
-	return (this->_type);
-}
+		void	attack(const std::string &target);
+		void	guardGate(void) const;
+};
 
-void Weapon::setType(std::string type) {
-	this->_type = type;
-}
+#endif

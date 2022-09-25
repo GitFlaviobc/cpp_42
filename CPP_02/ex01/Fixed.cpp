@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 20:10:54 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/23 13:10:42 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/09/24 08:19:41 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -52,9 +52,9 @@ Fixed &Fixed::operator=(Fixed const &src) {
 
 // std::cout << "Hello " << "World";
 // operator <<( operator <<( std::cout, "Hello" ), "World" );
-std::ostream &operator<<(std::ostream &COUT, Fixed const &fixedValue) {
-	COUT << fixedValue.toFloat();
-	return (COUT);
+std::ostream &operator<<(std::ostream &out, Fixed const &in) {
+	out << in.toFloat();
+	return (out);
 }
 
 int	Fixed::getRawBits( void ) const {
