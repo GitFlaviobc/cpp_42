@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/09 08:59:28 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/09 13:54:54 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/09 19:56:15 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -33,13 +33,13 @@ Base*	new_C(void) {
 
 Base*	generate(void) {
 	int		rand;
-	t_funct	*baseRay[3];
+	t_funct	*baseArray[3];
 
-	baseRay[0] = new_A;
-	baseRay[1] = new_B;
-	baseRay[2] = new_C;
+	baseArray[0] = new_A;
+	baseArray[1] = new_B;
+	baseArray[2] = new_C;
 	rand = rand_gen(0,2);
-	return(baseRay[rand]());
+	return(baseArray[rand]());
 }
 
 void	identify(Base* p) {
