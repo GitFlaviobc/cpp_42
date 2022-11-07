@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/05 09:09:09 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/05 17:38:10 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/28 08:01:02 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -14,11 +14,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
+// -Constructors
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm() {
-	return ;
-}
-
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 	return ;
 }
 
@@ -31,15 +28,23 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
 	return ;
 }
 
+// -Destructors
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
+	return ;
+}
+
+// -Operators
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &src) {
 	(void)src;
 	return (*this);
 }
 
+// -Getters
 const std::string &ShrubberyCreationForm::getTarget(void) const {
 	return (this->_target);
 }
 
+// -Methods
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	if (this->getIsSigned() == false) {
 		throw AForm::UnsignedFormException();
@@ -64,7 +69,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 			"					\\ ||\n"
 			"					|||\n"
 			"					|||\n"
-			"				ejm  |||\n"
+			"					|||\n"
 			"				, -=-~| .-^- _\n";
 		ofs << tree;
 		ofs.close();

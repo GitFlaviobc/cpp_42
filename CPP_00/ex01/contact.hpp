@@ -18,19 +18,25 @@
 
 class Contact {
 	public:
+		// -Constructor
 		Contact(void);
+		
+		// -Destructor
 		~Contact(void);
-		std::string	FTgetFirstName(void);
-		std::string	FTgetLastName(void);
-		std::string	FTgetNickName(void);
-		std::string	FTgetPhoneNumber(void);
-		std::string	FTgetDarkestSecret(void);
 
-		void	FTsetFirstName(std::string firstName);
-		void	FTsetLastName(std::string lastName);
-		void	FTsetNickName(std::string nickName);
-		void	FTsetPhoneNumber(std::string phoneNumber);
-		void	FTsetDarkestSecret(std::string darkestSecret);
+		// -Getters
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickName(void);
+		std::string	getPhoneNumber(void);
+		std::string	getDarkestSecret(void);
+
+		// -Setters
+		void	setFirstName(std::string firstName);
+		void	setLastName(std::string lastName);
+		void	setNickName(std::string nickName);
+		void	setPhoneNumber(std::string phoneNumber);
+		void	setDarkestSecret(std::string darkestSecret);
 
 	private:
 		std::string	_firstName;

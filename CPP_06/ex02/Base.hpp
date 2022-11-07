@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/09 08:59:25 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/09 13:54:06 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/28 13:53:23 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -31,6 +31,6 @@ void	identify(Base* p);
 void	identify(Base& p);
 
 // -TypeDef
-typedef Base*	t_funct();
+typedef Base*	t_funct(void);
 
 #endif

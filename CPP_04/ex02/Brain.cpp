@@ -6,13 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/29 17:50:41 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/01 12:45:44 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 10:22:25 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "Brain.hpp"
 
+// -Constructors
 Brain::Brain(void) {
 	std::cout << "Brain default constructor called\n";
 	std::stringstream	ss;
@@ -25,36 +26,43 @@ Brain::Brain(void) {
 	return ;
 }
 
+Brain::Brain(Brain const &rhs) {
+	std::cout << "Brain copy constructor called\n";
+	*this = rhs;
+	return ;
+}
+
+// -Destructors
 Brain::~Brain(void) {
 	std::cout << "Brain default destructor called\n";
 	return ;
 }
 
-Brain::Brain(Brain const &src) {
-	std::cout << "Brain copy constructor called\n";
-	*this = src;
-	return ;
-}
-
-Brain &Brain::operator=(Brain const &src) {
+// -Operators
+Brain &Brain::operator=(Brain const &rhs) {
 	std::cout << "Brain assigment operator called\n";
-	for (int i = 0; i < 100; i++) {
-		this->_ideas[i] = src.getIdeas(i);
+	if (this != &rhs) {
+		for (int i = 0; i < 100; i++) {
+			this->_ideas[i] = rhs.getIdeas(i);
+		}
 	}
 	return (*this);
 }
 
+// -Getters
+const std::string &Brain::getIdeas(int const &i) const {
+	return (this->_ideas[i]);
+}
+
+// -Setters
+void Brain::setIdeas(int const &i, std::string &Ideas) {
+	this->_ideas[i] = Ideas;
+}
+
+// -Functions
 std::ostream &operator<<(std::ostream &out, Brain const &in) {
 	for (int i = 0; i < 100; i++) {
 		out << in.getIdeas(i) << "\n";
 	}
 	return (out);
-}
-
-const std::string &Brain::getIdeas(int const &i) const {
-	return (this->_ideas[i]);
-}
-
-void Brain::setIdeas(int const &i, std::string &Ideas) {
-	this->_ideas[i] = Ideas;
 }

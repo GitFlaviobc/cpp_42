@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/01 14:27:48 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 10:40:01 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,16 +19,21 @@ int	main(void) {
 		std::cout << "\n---------- Stack -------------\n";
 		// Now it is an Abstract class won´t work
 		// AAnimal wrong;
-		Cat ok;
-		Dog fine;
+		std::cout << "--------Brain-------------\n";
 		Brain ok_too;
+		std::cout << "--------Cat-------------\n";
+		Cat ok;
+		std::cout << "--------Dog-------------\n";
+		Dog fine;
+		std::cout << "--------Destructors-------------\n";
 	}
-	std::cout << "\n---------- Stack -------------\n";
+	std::cout << "\n---------- Heap -------------\n";
 	{
-		const AAnimal* wrong = new AAnimal();
-		delete wrong;
+		// Now it is an Abstract class won´t work
+		// const AAnimal* wrong = new AAnimal();
+		// delete wrong;
 	}
-	std::cout << "\n---------- ? -------------\n";
+	std::cout << "\n---------- Heap -------------\n";
 	{
 		const AAnimal* j = new Dog();
 		const AAnimal* i = new Cat();

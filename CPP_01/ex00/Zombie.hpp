@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:29 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:43:14 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/18 08:42:55 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,14 +19,21 @@
 
 class Zombie {
 	public:
+		// -Constructor
 		Zombie(std::string name);
+
+		// -Desstructor
 		~Zombie(void);
-		void announce(void);
+
+		// -Methods
+		void	announce(void);
+
 	private:
 		std::string	_name;
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+// -Function
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif

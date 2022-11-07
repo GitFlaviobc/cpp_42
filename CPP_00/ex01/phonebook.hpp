@@ -22,22 +22,29 @@
 
 class PhoneBook {
 	public:
+		// -Constructor
 		PhoneBook(void);
+		
+		// -Destructor
 		~PhoneBook(void);
-		void	FTaddContact(std::string firstName,
+
+		// -Methods
+		void	addContact(std::string firstName,
 				std::string lastName,
 				std::string nickName,
 				std::string phoneNumber,
 				std::string darkestSecret);
-		int		FTvalidContact(int index);
-		int		FTgetTotalContacts(void);
-		void	FTprintAllContacts(void);
-		void	FTprintOneContact(int index);
+		int		validContact(int index);
+		int		getTotalContacts(void);
+		void	printAllContacts(void);
+		void	printOneContact(int index);
+
 	private:
 		Contact	_contacts[8];
 		int		_total;
 		int		_index;
-		void	_FTprintFormattedField(std::string str);
+		void	_printFormattedField(std::string str);
 };
+
 
 #endif

@@ -6,13 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 13:13:14 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:52:46 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/24 14:52:21 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "FragTrap.hpp"
 
+// -Constructors
 FragTrap::FragTrap(void) : ClapTrap() {
 	this->setHitpoints(100);
 	this->setEnergypoints(100);
@@ -32,26 +33,31 @@ FragTrap::FragTrap(std::string const name) : ClapTrap(name) {
 	return ;
 }
 
+FragTrap::FragTrap(FragTrap const &rhs) : ClapTrap() {
+	std::cout << this->getClassname() << ": Copy Constructor called!\n";
+	*this = rhs;
+	return ;
+}
+
+// -Destructors
 FragTrap::~FragTrap(void) {
 	std::cout << this->getName() << ": FragTrap Destructor called!\n";
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src) : ClapTrap() {
-	std::cout << this->getClassname() << ": Copy Constructor called!\n";
-	*this = src;
-	return ;
-}
-
-FragTrap &FragTrap::operator=(FragTrap const &src) {
+// -Operators
+FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 	std::cout << this->getClassname() << ": Copy assignment operator called!\n";
-	const_cast<std::string &>(this->_name) = src.getName();
-	this->_hitPoints = src.getHitpoints();
-	this->_energyPoints = src.getEnergypoints();
-	this->_attackDamage = src.getAttackdamage();
+	if (this != &rhs) {
+		this->_hitPoints = rhs.getHitpoints();
+		this->_energyPoints = rhs.getEnergypoints();
+		this->_attackDamage = rhs.getAttackdamage();
+		this->_name = rhs.getName();
+	}
 	return (*this);
 }
 
+// -Methods
 void FragTrap::highFivesGuys(void) {
 	if (this->getHitpoints() <= 0) {
 		std::cout << this->getClassname() << ": " << this->_name << ", I am dead, leave me alone...\n";

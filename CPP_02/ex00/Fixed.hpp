@@ -5,8 +5,8 @@
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/18 20:10:51 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:48:37 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/10/21 18:18:33 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/10/22 16:59:48 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -18,15 +18,24 @@
 
 class Fixed {
 	public:
+		// -Constructors
 		Fixed(void);
-		~Fixed(void);
-		Fixed(Fixed const &src);
-		Fixed &operator=(Fixed const &src);
+		Fixed(Fixed const &rhs);
 
+		// -Destructor
+		~Fixed(void);
+		
+		// -Operators
+		Fixed &operator=(Fixed const &rhs);
+
+		// -Getters
 		int		getRawBits( void ) const;
+
+		// -Setters
 		void	setRawBits(int const raw );
+
 	private:
-		int					_fixedValue;
+		int					_rawValue;
 		static const int	_fractBit;
 };
 

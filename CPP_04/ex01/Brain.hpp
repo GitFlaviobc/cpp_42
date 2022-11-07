@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/29 17:50:44 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/01 12:44:37 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 09:53:34 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -20,13 +20,21 @@
 
 class Brain {
 	public:
+		// -Constructors
 		Brain(void);
-		~Brain(void);
-		Brain(Brain const &src);
-		Brain &operator=(Brain const &src);
+		Brain(Brain const &rhs);
 
+		// -Destructors
+		~Brain(void);
+
+		// -Operators
+		Brain &operator=(Brain const &rhs);
+
+		// -Getters
 		const std::string	&getIdeas(int const &i) const;
-		void		setIdeas(int const &i, std::string &Ideas);
+
+		// -Setters
+		void	setIdeas(int const &i, std::string &Ideas);
 
 	private:
 		std::string	_ideas[100];

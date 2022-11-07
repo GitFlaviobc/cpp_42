@@ -6,13 +6,14 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/24 09:10:30 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:51:52 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/24 15:01:49 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+// -Constructors
 ScavTrap::ScavTrap(void) : ClapTrap() {
 	this->setHitpoints(100);
 	this->setEnergypoints(50);
@@ -32,26 +33,31 @@ ScavTrap::ScavTrap(std::string const name) : ClapTrap(name) {
 	return ;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap() {
+	std::cout << this->getClassname() << ": Copy Constructor called!\n";
+	*this = rhs;
+	return ;
+}
+
+// -Destructors
 ScavTrap::~ScavTrap(void) {
 	std::cout << this->getName() << ": ScavTrap Destructor called!\n";
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap() {
-	std::cout << this->getClassname() << ": Copy Constructor called!\n";
-	*this = src;
-	return ;
-}
-
-ScavTrap &ScavTrap::operator=(ScavTrap const &src) {
+// -Operators
+ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 	std::cout << this->getClassname() << ": Copy assignment operator called!\n";
-	const_cast<std::string &>(this->_name) = src.getName();
-	this->_hitPoints = src.getHitpoints();
-	this->_energyPoints = src.getEnergypoints();
-	this->_attackDamage = src.getAttackdamage();
+	if (this != &rhs) {
+		this->_hitPoints = rhs.getHitpoints();
+		this->_energyPoints = rhs.getEnergypoints();
+		this->_attackDamage = rhs.getAttackdamage();
+		this->_name = rhs.getName();
+	}
 	return (*this);
 }
 
+// -Methods
 void ScavTrap::attack(const std::string& target) {
 	if (this->getHitpoints() <= 0) {
 		std::cout << this->getClassname() << ": " << this->_name << " I am dead, leave me alone\n";

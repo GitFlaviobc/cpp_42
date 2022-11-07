@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/05 09:09:06 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/05 09:31:49 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 14:36:27 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,14 +19,22 @@
 
 class RobotomyRequestForm : public AForm {
 	public:
+		// -Constructors
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(const std::string &target);
+		RobotomyRequestForm(RobotomyRequestForm const &rhs);
+
+		// -Destructors
 		virtual ~RobotomyRequestForm(void);
-		RobotomyRequestForm(RobotomyRequestForm const &src);
-		RobotomyRequestForm &operator=(RobotomyRequestForm const &src);
-		
-		const std::string &getTarget(void) const;
-		void execute(const class Bureaucrat &executor) const;
+
+		// -Operators
+		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
+
+		// -Getters
+		const std::string	&getTarget(void) const;
+
+		// -Methods
+		void	execute(const class Bureaucrat &executor) const;
 };
 
 #endif

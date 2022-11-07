@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/25 16:23:45 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/01 14:18:37 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 10:20:36 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -20,15 +20,24 @@
 
 class Dog : public AAnimal {
 	public:
+		// -Constructors
 		Dog(void);
-		virtual ~Dog(void);
-		Dog(Dog const &src);
-		Dog &operator=(Dog const &src);
+		Dog(Dog const &rhs);
 
-		void makeSound(void) const;
-		Brain const *getBrain(void) const;
+		// -Destructors
+		virtual	~Dog(void);
+
+		// -Operators
+		Dog &operator=(Dog const &rhs);
+
+		// -Getters
+		Brain const	*getBrain(void) const;
+
+		// -Methods
+		void	makeSound(void) const;
+
 	private:
-		Brain *_brain;
+		Brain	*_brain;
 };
 
 #endif

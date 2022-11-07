@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/25 16:23:45 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/26 10:15:56 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 09:29:56 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,12 +19,18 @@
 
 class Dog : public Animal {
 	public:
+		// -Constructors
 		Dog(void);
-		virtual ~Dog(void);
-		Dog(Dog const &src);
-		Dog &operator=(Dog const &src);
+		Dog(Dog const &rhs);
 
-		void makeSound(void) const;
+		// -Destructors
+		virtual	~Dog(void);
+
+		// -Operators
+		Dog &operator=(Dog const &rhs);
+
+		// -Methods
+		void	makeSound(void) const;
 };
 
 #endif

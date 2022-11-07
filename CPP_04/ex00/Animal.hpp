@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/25 16:23:32 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 18:51:56 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 09:46:41 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -18,20 +18,31 @@
 
 class Animal {
 	public:
+		// -Constructors
 		Animal(void);
 		Animal(std::string const type);
-		virtual ~Animal(void);
-		Animal(Animal const &src);
-		Animal &operator=(Animal const &src);
+		Animal(Animal const &rhs);
+		
+		// -Destructors
+		virtual	~Animal(void);
 
+		// -Operators
+		Animal &operator=(Animal const &rhs);
+
+		// -Getters
 		const std::string	&getType(void) const;
-		void		setType(std::string type);
 
+		// -Setter
+		void	setType(std::string type);
+
+		// -Methods
 		virtual void	makeSound(void) const;
+
 	protected:
 		std::string	_type;
 };
 
+// -Functions
 std::ostream &operator<<(std::ostream &out, Animal const &in);
 
 #endif

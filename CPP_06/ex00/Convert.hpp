@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/07 10:31:22 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/08 17:30:08 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/26 10:21:41 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -23,11 +23,11 @@ class Convert {
 		Convert(const std::string input);
 		Convert(Convert const &rhs);
 
-		// -Operators
-		Convert &operator=(Convert const &rhs);
-
 		// -Destructor
 		~Convert(void);
+
+		// -Operators
+		Convert &operator=(Convert const &rhs);
 
 		// -Getters
 		const double		&getNumberinput(void) const;
@@ -42,6 +42,7 @@ class Convert {
 	private:
 		std::string	_input;
 		double		_numberInput;
+
 		// -Methods
 		char		toChar(void) const;
 		int			toInt(void) const;

@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/08 19:08:25 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/08 20:26:06 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/26 10:22:24 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -24,11 +24,11 @@ class Data {
 		Data(const std::string value);
 		Data(Data const &rhs);
 
-		// -Operators
-		Data &operator=(Data const &rhs);
-
 		// -Destructor
 		~Data(void);
+
+		// -Operators
+		Data &operator=(Data const &rhs);
 
 		// -Getters
 		const std::string	&getValue(void) const;

@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/07 10:31:20 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/08 17:36:19 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/26 10:22:09 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -33,6 +33,11 @@ Convert::Convert(Convert const &rhs) : _input(""), _numberInput(0) {
 	return ;
 }
 
+// -Destructor
+Convert::~Convert(void) {
+	return ;
+}
+
 // -Operators
 Convert &Convert::operator=(Convert const &rhs) {
 	if (this != &rhs) {
@@ -40,11 +45,6 @@ Convert &Convert::operator=(Convert const &rhs) {
 		this->_numberInput = rhs.getNumberinput();
 	}
 	return (*this);
-}
-
-// -Destructor
-Convert::~Convert(void) {
-	return ;
 }
 
 // -Getters

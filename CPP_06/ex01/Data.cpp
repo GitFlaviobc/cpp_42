@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/08 19:08:22 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/08 20:13:57 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/26 10:22:34 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -27,17 +27,17 @@ Data::Data(Data const &rhs) {
 	return ;
 }
 
+// -Destructor
+Data::~Data(void) {
+	return ;
+}
+
 // -Operators
 Data &Data::operator=(Data const &rhs) {
 	if (this != &rhs) {
 		this->_value = rhs.getValue();
 	}
 	return (*this);
-}
-
-// -Destructor
-Data::~Data(void) {
-	return ;
 }
 
 // -Getters

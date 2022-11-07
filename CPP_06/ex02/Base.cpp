@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/09 08:59:28 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/09 19:56:15 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/28 13:53:14 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -42,7 +42,7 @@ Base*	generate(void) {
 	return(baseArray[rand]());
 }
 
-void	identify(Base* p) {
+void	identify(Base *p) {
 	if (dynamic_cast<A*>(p))
 		std::cout << "Type: A\n";
 	else if (dynamic_cast<B*>(p))
@@ -54,22 +54,22 @@ void	identify(Base* p) {
 	return;
 }
 
-void	identify(Base& p) {
+void	identify(Base &p) {
 	try {
 		A a = dynamic_cast<A&>(p);
 		std::cout << "Type: A\n";
 	}
-	catch (const std::exception& e1) {
+	catch (const std::exception &e1) {
 		try {
 			B b = dynamic_cast<B&>(p);
 			std::cout << "Type: B\n";
 		}
-		catch (const std::exception& e2) {
+		catch (const std::exception &e2) {
 			try {
 				C c = dynamic_cast<C&>(p);
 				std::cout << "Type: C\n";
 			}
-			catch (const std::exception& e3) {
+			catch (const std::exception &e3) {
 				std::cerr << "Invalid reference\n";
 			}
 		}

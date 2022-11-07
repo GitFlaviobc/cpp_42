@@ -6,29 +6,32 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 18:57:28 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:46:55 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/20 10:09:15 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "Harl.hpp"
 
+// -Constructor
 Harl::Harl(void) {
 	return;
 }
 
+// -Destructor
 Harl::~Harl(void) {
 	return ;
 }
 
+// -Methods
 void Harl::complain(std::string level) {
-	// ReturnType (Class::*)(ParameterTypes...)
-	typedef	void (Harl::*complains)(void);
-	complains all_complains[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	//typedef ReturnType (Class::(typedef name))(ParameterTypes...)
+	typedef	void (Harl::*t_complains)(void);
+	t_complains all_complains[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string AllLevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++) {
-		if (!AllLevel[i].compare(level)) {
+		if (AllLevel[i].compare(level) == 0) {
 			std::cout << "Called Complain: " << AllLevel[i] << std::endl << std::endl;
 			(this->*all_complains[i])();
 			std::cout << "-----------------------" <<std::endl;

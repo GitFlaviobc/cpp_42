@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/28 16:22:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/28 16:44:37 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 09:29:09 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -18,21 +18,32 @@
 
 class WrongAnimal {
 	public:
+		// -Constructors
 		WrongAnimal(void);
 		WrongAnimal(std::string const type);
-		virtual ~WrongAnimal(void);
-		WrongAnimal(WrongAnimal const &src);
-		WrongAnimal &operator=(WrongAnimal const &src);
+		WrongAnimal(WrongAnimal const &rhs);
 
-		void makeSound(void) const;
-		
+		// -Destructors
+		virtual ~WrongAnimal(void);
+
+		// -Operators
+		WrongAnimal &operator=(WrongAnimal const &rhs);
+
+		// -Getters
 		const std::string	&getType(void) const;
-		void		setType(std::string type);
+
+		// -Setters
+		void	setType(std::string type);
+		
+		// -Methods
+		void	makeSound(void) const;
+
 	protected:
 		std::string	_type;
 
 };
 
+// -Functions
 std::ostream &operator<<(std::ostream &out, WrongAnimal const &in);
 
 #endif

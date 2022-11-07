@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/05 09:09:02 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/05 17:36:25 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 14:38:13 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,14 +19,22 @@
 
 class PresidentialPardonForm : public AForm {
 	public:
+		// -Constructors
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string &target);
-		virtual ~PresidentialPardonForm(void);
-		PresidentialPardonForm(PresidentialPardonForm const &src);
-		PresidentialPardonForm &operator=(PresidentialPardonForm const &src);
+		PresidentialPardonForm(PresidentialPardonForm const &rhs);
 
-		const std::string &getTarget(void) const;
-		void execute(const Bureaucrat &executor) const;
+		// -Destructors
+		virtual ~PresidentialPardonForm(void);
+
+		// -Operators
+		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
+
+		// -Getters
+		const std::string	&getTarget(void) const;
+
+		// -Methods
+		void	execute(const Bureaucrat &executor) const;
 };
 
 #endif

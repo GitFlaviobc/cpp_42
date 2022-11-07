@@ -6,12 +6,12 @@
 #  By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+              #
 #                                                    +#+        +#+    +#+ +#+               #
 #  Created: 2022/09/18 10:54:19 by Flavio BC        #+#        #+#    #+# #+#    #+#         #
-#  Updated: 2022/10/10 09:19:38 by Flavio BC       ###        #########   ########           #
+#  Updated: 2022/10/29 14:54:34 by Flavio BC       ###        #########   ########           #
 #  License: MIT                                                                              #
 #                                                                                            #
 # ****************************************************************************************** #
 
-NAME		= array
+NAME		= tarray
 
 HEADERS		= Array.hpp
 

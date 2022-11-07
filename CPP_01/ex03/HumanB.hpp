@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 15:46:14 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:45:54 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/18 10:08:11 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -18,10 +18,18 @@
 
 class HumanB {
 	public:
+		// -Constructor
 		HumanB(std::string name);
+
+		// -Destructor
 		~HumanB(void);
-		void	attack(void) const;
+
+		// -Setter
 		void	setWeapon(Weapon &weapon);
+		
+		// -Methods
+		void	attack(void) const;
+
 	private:
 		std::string	_name;
 		Weapon	*_weapon;

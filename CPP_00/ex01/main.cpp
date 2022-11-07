@@ -13,70 +13,76 @@
 
 #include "main.hpp"
 
-void	FTsearchInPhoneBook(PhoneBook myPhoneBook) {
-	int	index;
+void	searchInPhoneBook(PhoneBook myPhoneBook) {
+	std::string			option;
+	std::stringstream	buffer;
+	int					index;
 
 	std::cout << CLEAR;
-	if (myPhoneBook.FTgetTotalContacts() == 0) {
+	if (myPhoneBook.getTotalContacts() == 0) {
 		std::cout << "PhoneBook is empty, please add a contact first." << std::endl;
 		return ;
 	}
-	myPhoneBook.FTprintAllContacts();
+	myPhoneBook.printAllContacts();
 	std::cout << "Please enter the contact index: ";
-	std::cin >> index;
-	if (myPhoneBook.FTvalidContact(index - 1) == 0) {
+	std::cin >> option;
+	buffer << option;
+	buffer >> index;
+	if (myPhoneBook.validContact(index - 1) == 0) {
 		std::cout << "Error!" << std::endl;
 		std::cout << "Invalid index!" << std::endl;
 		return ;
 	}
-	myPhoneBook.FTprintOneContact(index - 1);
+	myPhoneBook.printOneContact(index - 1);
+	std::cin.ignore();
 }
 
-int	FTcheckValidField(std::string field) {
+int	checkValidField(std::string field) {
 	for (std::string::iterator it = field.begin(); it != field.end(); ++it)
 	if (!std::isalnum(*it)) {
 		std::cout << "Error!" << std::endl;
-		std::cout << "Field in the phonebook can´t be empty!" << std::endl;
+		std::cout << "Invalid Field!" << std::endl;
 		return (0);
 	}
 	return (1);
 }
 
-void	FTaddToPhoneBook(PhoneBook &myPhoneBook) {
-	std::string firstName;
-	std::string lastName;
-	std::string nickName;
-	std::string phoneNumber;
-	std::string darkestSecret;
+void	addToPhoneBook(PhoneBook &myPhoneBook) {
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickName;
+	std::string	phoneNumber;
+	std::string	darkestSecret;
 
 	std::cout << CLEAR;
 	std::cout << "Insert the contact information:" << std::endl;
+	// Ignore the \n or \t in the buffer of cin
 	std::cin.ignore();
 	std::cout << "First Name: ";
 	std::getline(std::cin, firstName);
-	if (!FTcheckValidField(firstName))
+	if (!checkValidField(firstName))
 		return ; 
 	std::cout << "Last Name: ";
 	std::getline(std::cin, lastName);
-	if (!FTcheckValidField(lastName))
+	if (!checkValidField(lastName))
 		return ; 
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickName);
-	if (!FTcheckValidField(nickName))
+	if (!checkValidField(nickName))
 		return ; 
 	std::cout << "Phone Number: ";
 	std::getline(std::cin, phoneNumber);
-	if (!FTcheckValidField(phoneNumber))
+	if (!checkValidField(phoneNumber))
 		return ; 
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, darkestSecret);
-	if (!FTcheckValidField(darkestSecret))
+	if (!checkValidField(darkestSecret))
 		return ; 
-	myPhoneBook.FTaddContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+	myPhoneBook.addContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	std::cout << "Contact " << firstName << " added to PhoneBook." << std::endl;
 }
 
-void	FTintroMessage(void) {
+void	introMessage(void) {
 	std::cout << std::endl;
 	std::cout << "Welcome to a really bad PhoneBook!" << std::endl;
 	std::cout << "To use the PhoneBook is really simple:" << std::endl;
@@ -86,24 +92,26 @@ void	FTintroMessage(void) {
 }
 
 int	main(void) {
-	PhoneBook myPhoneBook;
+	PhoneBook	myPhoneBook;
 	std::string	option;
 
 	std::cout << CLEAR;
-	while (true) {
-		FTintroMessage();
+	while (!std::cin.eof()) {
+		introMessage();
 		std::cin >> option;
 		std::cout << std::endl;
 		if (option == "ADD")
-			FTaddToPhoneBook(myPhoneBook);
+			addToPhoneBook(myPhoneBook);
 		else if (option == "SEARCH")
-			FTsearchInPhoneBook(myPhoneBook);
+			searchInPhoneBook(myPhoneBook);
 		else if (option == "EXIT")
 			break ;
-		else {
+		else if (!std::cin.eof()) {
+			std::cout << CLEAR;
 			std::cout << "Error!" << std::endl;
 			std::cout << "Invalid Input!" << std::endl;
 		}
 	}
+	std::cout << CLEAR;
 	return (0);
 }

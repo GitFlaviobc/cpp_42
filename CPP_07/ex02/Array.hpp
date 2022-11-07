@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/10 10:02:13 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/10 10:02:24 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/26 14:02:26 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -20,17 +20,30 @@ template <typename T>
 class Array {
 	public:
 		// -Constructors
-		Array<T>(void) : _size(0), _ptr(NULL) { return; }
+		Array<T>(void) : _size(0), _ptr(NULL) {
+			return ;
+		}
+
 		Array<T>(unsigned int n) : _size(n), _ptr(NULL) {
 			if (this->_size) {
 				this->_ptr = new T[this->_size];
 			}
-			return;
+			return ;
 		}
+
 		Array<T>(Array const &rhs) : _size(rhs.size()), _ptr(NULL) {
 			if (this->_size) {
 				this->_ptr = new T[this->_size];
 			}
+			return ;
+		}
+
+		// -Destructor
+		~Array<T>(void) {
+			if (this->_size) {
+				delete [] this->_ptr;
+			}
+			this->_ptr = NULL;
 			return ;
 		}
 
@@ -50,26 +63,19 @@ class Array {
 			}
 			return (*this);
 		}
+
 		T &operator[](int i) {
 			if (i < 0 || i >= static_cast<int>(this->_size)) {
 				throw std::out_of_range("Index out of range!\n");
 			}
 			return (this->_ptr[i]);
 		}
+
 		const T &operator[](int i) const {
 			if (i < 0 || i >= static_cast<int>(this->_size)) {
 				throw std::out_of_range("Index out of range!\n");
 			}
 			return (this->_ptr[i]);
-		}
-
-		// -Destructor
-		~Array<T>(void) {
-			if (this->_size) {
-				delete [] this->_ptr;
-			}
-			this->_ptr = NULL;
-			return ;
 		}
 
 		// -Methods

@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/25 16:23:39 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 18:49:47 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/25 09:30:02 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,12 +19,18 @@
 
 class Cat : public Animal {
 	public:
+		// -Constructors
 		Cat(void);
-		virtual ~Cat(void);
-		Cat(Cat const &src);
-		Cat &operator=(Cat const &src);
+		Cat(Cat const &rhs);
 
-		void makeSound(void) const;
+		// -Destructors
+		virtual	~Cat(void);
+
+		// -Operators
+		Cat &operator=(Cat const &rhs);
+
+		// -Methods
+		void	makeSound(void) const;
 };
 
 #endif

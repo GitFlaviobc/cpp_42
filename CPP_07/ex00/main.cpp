@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 10:54:12 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/09 16:47:49 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/29 14:32:42 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -15,6 +15,22 @@
 #include "whatever.hpp"
 
 int main(void) {
+	std::cout << "\n------------------PDF------------------\n";
+	{
+		int a = 2;
+		int b = 3;
+		::swap( a, b );
+		std::cout << "a = " << a << ", b = " << b << std::endl;
+		std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+		std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+		std::string c = "chaine1";
+		std::string d = "chaine2";
+		::swap(c, d);
+		std::cout << "c = " << c << ", d = " << d << std::endl;
+		std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+		std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+		std::cout << "\n------------------PDF END------------------\n";
+	}
 	std::cout << "\n------------------INT MIN - MAX------------------\n";
 	{
 		int	a = 5;

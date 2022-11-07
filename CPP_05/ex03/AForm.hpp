@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/10/02 16:10:45 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/10/05 09:31:16 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/27 15:16:00 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -19,12 +19,32 @@
 
 class AForm {
 	public:
+		// -Constructors
 		AForm(void);
 		AForm(const std::string name, const int reqGradeSign, const int reqGradeExec);
-		virtual ~AForm(void);
-		AForm(AForm const &src);
-		AForm &operator=(AForm const &src);
+		AForm(AForm const &rhs);
 
+		// -Destructors
+		virtual ~AForm(void);
+
+		// -Operators
+		AForm &operator=(AForm const &rhs);
+
+		// -Getters
+		const std::string			&getName(void) const;
+		bool						getIsSigned(void) const;
+		int							getReqGradeSign(void) const;
+		int							getReqGradeExec(void) const;
+		virtual const std::string	&getTarget(void) const;
+
+		// -Setters
+		void	setTarget(std::string target);
+
+		// -Methods
+		void			beSigned(const class Bureaucrat &b);
+		virtual void	execute(const class Bureaucrat& executor) const = 0;
+
+		// -Exceptions
 		class GradeTooHighException : public std::exception {
 		public:
 			const char* what(void) const throw();
@@ -44,17 +64,6 @@ class AForm {
 		public:
 			const char* what(void) const throw();
 		};
-
-		const std::string &getName(void) const;
-		bool getIsSigned(void) const;
-		virtual const std::string	&getTarget(void) const;
-		void		setTarget(std::string target);
-		
-		int getReqGradeSign(void) const;
-		int getReqGradeExec(void) const;
-		void beSigned(const class Bureaucrat &b);
-
-		virtual void execute(const class Bureaucrat& executor) const = 0;
 
 	private:
 		const std::string	_name;

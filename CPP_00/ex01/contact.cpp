@@ -13,50 +13,54 @@
 
 #include "contact.hpp"
 
+// -Constructor
 Contact::Contact(void) {
 	return ;
 }
 
+// -Destructor
 Contact::~Contact(void) {
 	return ;
 }
 
-std::string Contact::FTgetFirstName(void) {
+// -Getters
+std::string Contact::getFirstName(void) {
 	return (this->_firstName);
 }
 
-std::string Contact::FTgetLastName(void) {
+std::string Contact::getLastName(void) {
 	return (this->_lastName);
 }
 
-std::string Contact::FTgetNickName(void) {
+std::string Contact::getNickName(void) {
 	return (this->_nickName);
 }
 
-std::string Contact::FTgetPhoneNumber(void) {
+std::string Contact::getPhoneNumber(void) {
 	return (this->_phoneNumber);
 }
 
-std::string Contact::FTgetDarkestSecret(void) {
+std::string Contact::getDarkestSecret(void) {
 	return (this->_darkestSecret);
 }
 
-void Contact::FTsetFirstName(std::string firstName) {
+// -Setters
+void Contact::setFirstName(std::string firstName) {
 	this->_firstName = firstName;
 }
 
-void Contact::FTsetLastName(std::string lastName) {
+void Contact::setLastName(std::string lastName) {
 	this->_lastName = lastName;
 }
 
-void Contact::FTsetNickName(std::string nickName) {
+void Contact::setNickName(std::string nickName) {
 	this->_nickName = nickName;
 }
 
-void Contact::FTsetPhoneNumber(std::string phoneNumber) {
+void Contact::setPhoneNumber(std::string phoneNumber) {
 	this->_phoneNumber = phoneNumber;
 }
 
-void Contact::FTsetDarkestSecret(std::string darkestSecret) {
+void Contact::setDarkestSecret(std::string darkestSecret) {
 	this->_darkestSecret = darkestSecret;
 }

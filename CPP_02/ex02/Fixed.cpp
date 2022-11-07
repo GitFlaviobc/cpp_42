@@ -6,7 +6,7 @@
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
 /* Created: 2022/09/18 20:10:54 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:49:21 by Flavio BC       ###        #########   ########          */
+/* Updated: 2022/10/22 19:03:26 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
@@ -15,55 +15,61 @@
 
 int const Fixed::_fractBit = 8;
 
-Fixed::Fixed(void) : _fixedValue(0) {
+// -Constructors
+Fixed::Fixed(void) : _rawValue(0) {
 	return;
 }
 
-Fixed::Fixed(int const value) : _fixedValue(value << Fixed::_fractBit) {
+Fixed::Fixed(int const value) : _rawValue(value << Fixed::_fractBit) {
 	return ;
 }
 
-Fixed::Fixed(float const value) : _fixedValue(static_cast<int>(roundf(value * (1 << Fixed::_fractBit)))) {
+Fixed::Fixed(float const value) : _rawValue(static_cast<int>(roundf(value * (1 << Fixed::_fractBit)))) {
 	return ;
 }
 
+Fixed::Fixed(Fixed const &rhs) {
+	// std::cout << "Copy Constructor called\n"; to check ++X vs X++
+	*this = rhs;
+	return ;
+}
+
+// -Destructor
 Fixed::~Fixed(void) {
 	return ;
 }
 
-Fixed::Fixed(Fixed const &src) {
-	*this = src;
-	return ;
-}
-
-Fixed &Fixed::operator=(Fixed const &src) {
-	this->setRawBits(src.getRawBits());
+// -Operators
+Fixed &Fixed::operator=(Fixed const &rhs) {
+	if (this != &rhs) {
+		this->setRawBits(rhs.getRawBits());
+	}
 	return (*this);
 }
 
 // Comparison Operators
 bool Fixed::operator>(Fixed const &rhs) const {
-	return (this->_fixedValue > rhs.getRawBits());
+	return (this->_rawValue > rhs.getRawBits());
 }
 
 bool Fixed::operator<(Fixed const &rhs) const {
-	return (this->_fixedValue < rhs.getRawBits());
+	return (this->_rawValue < rhs.getRawBits());
 }
 
 bool Fixed::operator>=(Fixed const &rhs) const {
-	return (this->_fixedValue >= rhs.getRawBits());
+	return (this->_rawValue >= rhs.getRawBits());
 }
 
 bool Fixed::operator<=(Fixed const &rhs) const {
-	return (this->_fixedValue <= rhs.getRawBits());
+	return (this->_rawValue <= rhs.getRawBits());
 }
 
 bool Fixed::operator==(Fixed const &rhs) const {
-	return (this->_fixedValue == rhs.getRawBits());
+	return (this->_rawValue == rhs.getRawBits());
 }
 
 bool Fixed::operator!=(Fixed const &rhs) const {
-	return (this->_fixedValue != rhs.getRawBits());
+	return (this->_rawValue != rhs.getRawBits());
 }
 
 // Arithmetic operators
@@ -88,28 +94,29 @@ Fixed Fixed::operator/(Fixed const &rhs) const {
 }
 
 // Prefix increment operator.
+// by reference allows: ++++++(value) that is the same as: ++(++(++value))
 Fixed &Fixed::operator++(void) {
-	++this->_fixedValue;
+	++this->_rawValue;
 	return (*this);
 }
 
 // Postfix increment operator.
 Fixed Fixed::operator++(int) {
 	Fixed temp = *this;
-	this->_fixedValue++;
+	this->_rawValue++;
 	return (temp);
 }
 
 // Prefix decrement operator.
 Fixed &Fixed::operator--(void) {
-	--this->_fixedValue;
+	--this->_rawValue;
 	return (*this);
 }
 
 // Postfix decrement operator.
 Fixed Fixed::operator--(int) {
 	Fixed temp = *this;
-	this->_fixedValue--;
+	this->_rawValue--;
 	return (temp);
 }
 
@@ -142,26 +149,27 @@ Fixed const &Fixed::max(Fixed const &lhs, Fixed const &rhs) {
 		return (rhs);
 }
 
-// Getter and Setters
+// -Getters
 int	Fixed::getRawBits( void ) const {
-	return (this->_fixedValue);
+	return (this->_rawValue);
 }
 
+// -Setters
 void	Fixed::setRawBits(int const raw ) {
-	this->_fixedValue = raw;
+	this->_rawValue = raw;
 	return ;
 }
 
-// Tranformers
+// -Methods
 float Fixed::toFloat(void) const {
-  return (static_cast<float>(this->_fixedValue) / (1 << _fractBit));
+	return (static_cast<float>(this->_rawValue) / (1 << _fractBit));
 }
 
 int Fixed::toInt(void) const {
-  return (this->_fixedValue >> _fractBit);
+	return (this->_rawValue >> _fractBit);
 }
 
-// Other functions
+// -Functions
 std::ostream &operator<<(std::ostream &out, Fixed const &in) {
 	out << in.toFloat();
 	return (out);

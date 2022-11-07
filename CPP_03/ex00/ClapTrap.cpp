@@ -5,17 +5,18 @@
 /*                                                      +:+        +:+    +:+ +:+           */
 /* By: Flavio BC <github.com/GitFlaviobc>             :#::+::#   +#++:++#+  +#+             */
 /*                                                   +#+        +#+    +#+ +#+              */
-/* Created: 2022/09/23 19:23:18 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
-/* Updated: 2022/09/25 12:50:28 by Flavio BC       ###        #########   ########          */
+/* Created: 2022/10/23 08:05:31 by Flavio BC        #+#        #+#    #+# #+#    #+#        */
+/* Updated: 2022/10/24 14:42:55 by Flavio BC       ###        #########   ########          */
 /* License: MIT                                                                             */
 /*                                                                                          */
 /* **************************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+// -Constructors
 ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamage(0), _name("ClapTrap") {
-	std::cout << "ClapTrap Default Constructor called!\n";
-	return;
+	std::cout << "ClapTrap default constructor called\n";
+	return ;
 }
 
 ClapTrap::ClapTrap (std::string const name) : _hitPoints(10), _energyPoints(10), _attackDamage(0), _name(name) {
@@ -23,26 +24,65 @@ ClapTrap::ClapTrap (std::string const name) : _hitPoints(10), _energyPoints(10),
 	return ;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &rhs) {
+	std::cout << "ClapTrap copy constructor called\n";
+	*this = rhs;
+	return ;
+}
+
+// -Destructor
 ClapTrap::~ClapTrap(void) {
 	std::cout << this->getName() << ": ClapTrap Destructor called!\n";
 	return ;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &src) {
-	std::cout << "ClapTrap Copy Constructor called!\n";
-	*this = src;
-	return ;
-}
-
-ClapTrap &ClapTrap::operator=(ClapTrap const &src) {
-	std::cout << "ClapTrap Copy assignment operator called!\n";
-	const_cast<std::string &>(this->_name) = src.getName();
-	this->_hitPoints = src.getHitpoints();
-	this->_energyPoints = src.getEnergypoints();
-	this->_attackDamage = src.getAttackdamage();
+// -Operators
+ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
+	std::cout << "ClapTrap copy assignment operator called\n";
+	if (this != &rhs) {
+		this->_hitPoints = rhs.getHitpoints();
+		this->_energyPoints = rhs.getEnergypoints();
+		this->_attackDamage = rhs.getAttackdamage();
+		this->_name = rhs.getName();
+	}
 	return (*this);
 }
 
+// -Getters
+const int &ClapTrap::getHitpoints(void) const {
+	return (this->_hitPoints);
+}
+
+const int &ClapTrap::getEnergypoints(void) const {
+	return (this->_energyPoints);
+}
+
+const int &ClapTrap::getAttackdamage(void) const {
+	return (this->_attackDamage);
+}
+
+const std::string &ClapTrap::getName(void) const {
+	return (this->_name);
+}
+
+// -Setters
+void ClapTrap::setHitpoints(int Hitpoints) {
+	this->_hitPoints = Hitpoints;
+} 
+
+void ClapTrap::setEnergypoints(int Energypoints) {
+	this->_energyPoints = Energypoints;
+} 
+
+void ClapTrap::setAttackdamage(int Attackdamage) {
+	this->_attackDamage = Attackdamage;
+}
+
+void ClapTrap::setName(std::string name) {
+	this->_name = name;
+}
+
+// -Methods
 void ClapTrap::attack(const std::string& target) {
 	if (this->getHitpoints() <= 0) {
 		std::cout << "ClapTrap " << this->_name << " I am dead, leave me alone\n";
@@ -84,40 +124,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << this->_name << " has " << this->getHitpoints() <<" HP left\n";
 	std::cout << "ClapTrap " << this->_name << " has " << this->getEnergypoints() <<" EP left\n";
 	return ;
-} 
-
-const int &ClapTrap::getHitpoints(void) const {
-	return (this->_hitPoints);
 }
 
-void ClapTrap::setHitpoints(int Hitpoints) {
-	this->_hitPoints = Hitpoints;
-} 
-
-const int &ClapTrap::getEnergypoints(void) const {
-	return (this->_energyPoints);
-}
-
-void ClapTrap::setEnergypoints(int Energypoints) {
-	this->_energyPoints = Energypoints;
-} 
-
-const int &ClapTrap::getAttackdamage(void) const {
-	return (this->_attackDamage);
-}
-
-void ClapTrap::setAttackdamage(int Attackdamage) {
-	this->_attackDamage = Attackdamage;
-}
-
-const std::string &ClapTrap::getName(void) const {
-	return (this->_name);
-}
-
-void ClapTrap::setName(std::string name) {
-	this->_name = name;
-}
-
+// -Functions
 std::ostream &operator<<(std::ostream &out, ClapTrap const &in) {
 	out << "ClapTrap: " << in.getName()
 		<< "\nhas " << in.getHitpoints() << " HP"
