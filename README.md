@@ -17,6 +17,8 @@
 - The project contains 8 mini projects each one with a new topic.
 - A lot of interesting concepts and a new Langague after learning C, was nice to see that with a good base in a langague other langagues are not so hard to understand. They are not easy, but with a base it is possible to learn other langagues.
 - This project uses C++98 flag.
+- I did few scripts to help me speed up creation of files for the project: [Scripts](https://github.com/GitFlaviobc/myscripts/tree/master)
+- I added what I changed on my my ~/.bashrc with alias that I made to use the scripts anywhere using the terminal: [Bashrc](https://github.com/GitFlaviobc/myscripts/blob/master/bashrc.txt)
 <p></p>
 <a href = "#content">📋</a>
 
